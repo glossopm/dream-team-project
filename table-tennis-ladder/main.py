@@ -1,10 +1,25 @@
 import sys
+import flask
 
 from html.html_generator import HtmlGenerator
 from user_interface.user_interface import Interface
 
+from flask import Flask
+app = Flask(__name__)
+# app.config['SERVER_NAME'] = "127.0.0.1:8080"
 
+web = True
+
+@app.route("/")
 def main():
+    return "Hello World!"
+
+@app.route("/leaderboards")
+def leaderboards():
+    return "Leaderboard page!"
+
+
+def console_main():
     user_interface = Interface(sys.argv)
     ladder = user_interface.select_ladder()
 
@@ -42,4 +57,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if web:
+        app.run()
+    else:
+        console_main()

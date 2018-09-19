@@ -1,6 +1,7 @@
 ## Dream Team Project
 ### *Quality is not an act, it’s a habit.*
        
+    ### To Do List
     1. Set-up
         i. Nginx set-up
         ii. Flask ser-up

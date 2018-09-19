@@ -1,0 +1,31 @@
+--- Welcome to Table Tennis Tracker ---
+
+Description:
+
+Used to track your table tennis rankings within Infinity Works.
+
+Commands:
+
+python main.py --win <name> --lose <name>
+python main.py -w <name> -l <name>
+When a game is played, use this command to input the winner and loser.
+
+
+python main.py --getladder
+python main.py -gl
+Use this command to check the current ladder rankings.
+
+
+-lb <board_name> or --leaderboard <board_name>
+These are used at the end of a string in order to access your local leaderboard
+
+Example use of local leaderboards:
+python main.py -w James -l Mike -lb InfinityWorks
+
+python test_ladder.py
+Use this command to test the ladder class.
+
+
+python main.py --help
+python main.py -h
+Check help file.

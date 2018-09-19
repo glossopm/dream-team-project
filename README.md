@@ -4,7 +4,7 @@
     ### To Do List
     1. Set-up
         i. Nginx set-up
-        ii. Flask ser-up
+        ii. Flask set-up
     2. View Pages
         i. Homepage
         ii. Error pages

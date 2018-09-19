@@ -1,4 +1,4 @@
-## Dream Team Prokect – 
+## Dream Team Project
 ### *Quality is not an act, it’s a habit.*
        
     1. Set-up

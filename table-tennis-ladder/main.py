@@ -1,24 +1,29 @@
 import sys
-import flask
-
-from html.html_generator import HtmlGenerator
 from user_interface.user_interface import Interface
+from database.db_controller import Database
+from ladder.ladder import Ladder
 
-from flask import Flask
-app = Flask(__name__)
+from flask import Flask, render_template
+app = Flask(__name__, template_folder='html', static_url_path='/static')
 # app.config['SERVER_NAME'] = "127.0.0.1:8080"
 
 web = True
 
+
 @app.route("/")
 def main():
-    return "Render a template for our runescape-esque homepage."
+    return app.send_static_file('html/dreamteam.html')
+
 
 @app.route('/leaderboard/<group>')
 def show_leaderboard(group):
-    # show the user profile for that user
-    return 'User %s' % group
-    # render template
+    table = Ladder(group, Database(group)).table
+    players = []
+    for name in table:
+        players.append({'name': name,
+                        'rank': table.index(name) + 1})
+    return render_template('ladder_template.html', players=players, group=group)
+
 
 def console_main():
     user_interface = Interface(sys.argv)
@@ -47,8 +52,8 @@ def console_main():
             ladder.add_new_score(winner_name, loser_name)
             ladder.print_ladder()
 
-            html = HtmlGenerator(ladder.ladder_name, ladder.table)
-            html.write_html()
+            # html = HtmlGenerator(ladder.ladder_name, ladder.table)
+            # html.write_html()
 
         else:
             print "Incorrect parameters. Use `python main.py --help` to view commands"

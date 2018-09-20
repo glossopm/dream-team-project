@@ -12,12 +12,13 @@ web = True
 
 @app.route("/")
 def main():
-    return "Hello World!"
+    return "Render a template for our runescape-esque homepage."
 
-@app.route("/leaderboards")
-def leaderboards():
-    return "Leaderboard page!"
-
+@app.route('/leaderboard/<group>')
+def show_leaderboard(group):
+    # show the user profile for that user
+    return 'User %s' % group
+    # render template
 
 def console_main():
     user_interface = Interface(sys.argv)

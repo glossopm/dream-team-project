@@ -3,7 +3,6 @@ import os
 
 
 class Database:
-    #TODO:  Mike is very angry. Our SQL is injectable :D
     def __init__(self, ladder_name):
         abspath = os.path.abspath("database/table_tennis.db")
         print abspath

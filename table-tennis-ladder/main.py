@@ -22,7 +22,7 @@ web = True
 
 @app.route("/")
 def main():
-    return render_template('dreamteam.html')
+    return render_template('home.html')
 
 
 @app.route('/leaderboard/<group>')

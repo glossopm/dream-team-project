@@ -29,8 +29,27 @@
           border-spacing: 5px;
       }
 
-      img {}
-
       p {
-          color: greenyellow;
+          color: #90c040;
+      }
+
+      .nav_wrapper {
+          text-align: center;
+      }
+
+      .navbar ul {
+          padding-left: 0px;
+      }
+
+      .navbar ul li {
+          list-style: none;
+          display: inline-block;
+      }
+
+      .navbar li a {
+          background: black;
+          border: 2px solid #382418;
+          padding: 7px 15px;
+          color: #90c040;
+          text-decoration: none;
       }

@@ -12,14 +12,13 @@ app = Flask(__name__, template_folder='static/html', static_url_path='/static')
 nav = Nav(app)
 # Nav(app) initialised the navigation on the app.
 
-nav.register_element('my_navbar', Navbar('thenav', 
-    View('Homepage', 'main'), 
-    View('Global Leaderboard', 'show_leaderboard', group='global'
-    )))
+nav.register_element('my_navbar', Navbar('thenav',
+                                         View('Homepage', 'main'),
+                                         View('Global Leaderboard', 'show_leaderboard', group='global'
+                                              )))
 
 
 web = True
-
 
 @app.route("/")
 def main():

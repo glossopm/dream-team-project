@@ -4,15 +4,28 @@ from database.db_controller import Database
 from ladder.ladder import Ladder
 
 from flask import Flask, render_template
-app = Flask(__name__, template_folder='html', static_url_path='/static')
+from flask_nav import Nav
+from flask_nav.elements import Navbar, Subgroup, View, Link, Text, Separator
+
+app = Flask(__name__, template_folder='static/html', static_url_path='/static')
 # app.config['SERVER_NAME'] = "127.0.0.1:8080"
+nav = Nav(app)
+# Nav(app) initialised the navigation on the app.
+
+nav.register_element('my_navbar', Navbar('thenav', 
+    View('Homepage', 'main'), 
+    View('Global Leaderboard', 'show_leaderboard', group='global'
+    )))
+
+for i in leaderboard_names:
+    View('i,','show_leaderboard', group=i)
 
 web = True
 
 
 @app.route("/")
 def main():
-    return app.send_static_file('html/dreamteam.html')
+    return render_template('dreamteam.html')
 
 
 @app.route('/leaderboard/<group>')

@@ -4,7 +4,7 @@ from database.db_controller import Database
 from ladder.ladder import Ladder
 
 from flask import Flask, render_template
-app = Flask(__name__, template_folder='html', static_url_path='/static')
+app = Flask(__name__, template_folder='static/html', static_url_path='/static')
 # app.config['SERVER_NAME'] = "127.0.0.1:8080"
 
 web = True

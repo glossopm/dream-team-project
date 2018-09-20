@@ -1,10 +1,13 @@
 import sqlite3
+import os
 
 
 class Database:
     #TODO:  Mike is very angry. Our SQL is injectable :D
     def __init__(self, ladder_name):
-        self.conn = sqlite3.connect('database/table_tennis.db')
+        abspath = os.path.abspath("database/table_tennis.db")
+        print abspath
+        self.conn = sqlite3.connect(abspath)
 
         if ladder_name not in self.get_leaderboards():
             self.create_league_table(ladder_name)

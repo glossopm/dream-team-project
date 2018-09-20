@@ -17,8 +17,6 @@ nav.register_element('my_navbar', Navbar('thenav',
     View('Global Leaderboard', 'show_leaderboard', group='global'
     )))
 
-for i in leaderboard_names:
-    View('i,','show_leaderboard', group=i)
 
 web = True
 

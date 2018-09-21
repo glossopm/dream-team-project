@@ -3,19 +3,8 @@
             bottom: 10px;
             width: 50%;
         }
-        .leaderboard_nav {
-            color: white;
-            background: white;
-        }
 
-        .leaderboard_nav li a {
-            background: black;
-            border: 2px solid #382418;
-            padding: 7px 15px;
-            color: #90c040;
-            text-decoration: none;
-        }
-        
+
         body {
             background-image: url("../img/rs_repeat_bg.jpg");
             background-repeat: repeat-y;
@@ -64,4 +53,26 @@
             padding: 7px 15px;
             color: #90c040;
             text-decoration: none;
+        }
+
+        .lb_nav li {
+            
+            background: url(https://www.runescape.com/img/rsp777/hiscores/banner_middle2.gif) repeat-y;
+
+        }
+        .lb_nav {
+            max-width: 157px;
+            margin: 0px;
+            padding-left: 40px;
+            list-style: none;
+            text-align: left;
+            width: 175px;
+            padding: 0px 4px;
+        }
+
+        .lb_nav li a {
+            color: rgb(217, 194, 126);
+            margin-left: 40px;
+            display: block;
+            padding: 3px 0px 0px 20px;
         }

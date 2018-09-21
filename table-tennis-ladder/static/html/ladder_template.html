@@ -9,12 +9,18 @@
 
     <title>League Tracker</title>
 </head>
-{{ nav.my_navbar.render() }}
+
 <body>
+    <img src="../static/img/custom_rs_logo.png" alt="Dream Team">
+
+    <div class="nav_wrapper">
+        {{ nav.my_navbar.render() }}
+    </div>
     <h1>{{ group }}</h1>
     <p>A HTML leaderboard to easily view the current ladder status</p>
 
-    <ul title="Leaderboards" class="leaderboard_nav">
+    <ul title="Leaderboards" class="lb_nav">
+        <img src="https://www.runescape.com/img/rsp777/hiscores/banner_top2.gif" alt="Leaderboards">
         {% for name in names %}
             <li><a href="../leaderboard/{{name}}">{{name}}</a></li>
         {% endfor %}

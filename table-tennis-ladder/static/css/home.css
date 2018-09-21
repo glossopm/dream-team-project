@@ -3,6 +3,15 @@
           bottom: 10px;
           width: 50%;
       }
+      #lboardcontent {
+        width: 379px;
+        position: relative;
+        background: url("../img/scroll_middle.gif") repeat-y;
+        margin: 0 -5px;
+        line-height: 18px;
+        color: #000;
+      }
+      
       table {
         display: table;
         border-collapse: separate;

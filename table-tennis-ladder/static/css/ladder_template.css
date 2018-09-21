@@ -3,7 +3,19 @@
             bottom: 10px;
             width: 50%;
         }
+        .leaderboard_nav {
+            color: white;
+            background: white;
+        }
 
+        .leaderboard_nav li a {
+            background: black;
+            border: 2px solid #382418;
+            padding: 7px 15px;
+            color: #90c040;
+            text-decoration: none;
+        }
+        
         body {
             background-image: url("../img/rs_repeat_bg.jpg");
             background-repeat: repeat-y;

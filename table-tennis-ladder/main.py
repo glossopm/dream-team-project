@@ -29,10 +29,11 @@ def main():
 def show_leaderboard(group):
     table = Ladder(group, Database(group)).table
     players = []
+    names = Database().get_leaderboards()
     for name in table:
         players.append({'name': name,
                         'rank': table.index(name) + 1})
-    return render_template('ladder_template.html', players=players, group=group)
+    return render_template('ladder_template.html', players=players, group=group, names=names)
 
 
 def console_main():

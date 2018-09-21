@@ -14,6 +14,12 @@
     <h1>{{ group }}</h1>
     <p>A HTML leaderboard to easily view the current ladder status</p>
 
+    <ul title="Leaderboards" class="leaderboard_nav">
+        {% for name in names %}
+            <li><a href="../leaderboard/{{name}}">{{name}}</a></li>
+        {% endfor %}
+    </ul>
+
     <div>
         <center>
             <table id = "lboardcontent">

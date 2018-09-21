@@ -3,7 +3,12 @@
           bottom: 10px;
           width: 50%;
       }
-
+      table {
+        display: table;
+        border-collapse: separate;
+        border-spacing: 2px;
+        border-color: grey;
+      }
       body {
           background-image: url("../img/rs_repeat_bg.jpg");
           background-repeat: repeat-y;

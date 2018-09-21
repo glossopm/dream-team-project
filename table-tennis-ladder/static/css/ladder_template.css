@@ -1,0 +1,55 @@
+        audio controls {
+            position: absolute;
+            bottom: 10px;
+            width: 50%;
+        }
+
+        body {
+            background-image: url("../img/rs_repeat_bg.jpg");
+            background-repeat: repeat-y;
+            background-attachment: fixed;
+            background-position: center;
+            background-color: black;
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+        }
+
+        .container {
+            color: white;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            text-align: center;
+            border-spacing: 5px;
+        }
+
+        p {
+            color: #90c040;
+        }
+
+        .nav_wrapper {
+            text-align: center;
+        }
+
+        .navbar ul {
+            padding-left: 0px;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            display: inline-block;
+        }
+
+        .navbar li a {
+            background: black;
+            border: 2px solid #382418;
+            padding: 7px 15px;
+            color: #90c040;
+            text-decoration: none;
+        }

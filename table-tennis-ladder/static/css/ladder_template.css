@@ -4,8 +4,12 @@
             width: 50%;
         }
 
+        html, body{ 
+            background-color: black;
+            height: 100%;
+        }
 
-        body {
+        .contents {
             background-image: url("../img/rs_repeat_bg.jpg");
             background-repeat: repeat-y;
             background-attachment: fixed;
@@ -16,6 +20,7 @@
             margin-left: auto;
             margin-right: auto;
             color: white;
+            height: 100%;
         }
 
         .container {
@@ -55,24 +60,53 @@
             text-decoration: none;
         }
 
-        .lb_nav li {
-            
-            background: url(https://www.runescape.com/img/rsp777/hiscores/banner_middle2.gif) repeat-y;
 
-        }
-        .lb_nav {
+        .lb_nav ul {
+            background: url(https://www.runescape.com/img/rsp777/hiscores/banner_middle2.gif) repeat-y;
             max-width: 157px;
-            margin: 0px;
-            padding-left: 40px;
+            margin: 200px;
+
+            padding-left: 10px;
             list-style: none;
             text-align: left;
             width: 175px;
             padding: 0px 4px;
+
         }
 
-        .lb_nav li a {
+        .lb_nav ul li a {
             color: rgb(217, 194, 126);
-            margin-left: 40px;
+            margin-left: 20px;
             display: block;
             padding: 3px 0px 0px 20px;
+        }
+
+        .main {
+            display: flex;
+        }
+
+        .left {
+            flex: 1
+        }
+
+        .right {
+            flex:2;
+        }
+
+        .sidebarnavbg {
+            background: url(https://www.runescape.com/img/rsp777/hiscores/banner_middle2.gif) repeat-y;
+            width: 175px;
+            list-style: none;
+            margin-left: 50px;
+            padding-bottom: 10px;
+            
+        }
+
+
+        .sidebarnavbg a {
+            color: rgb(217, 194, 126);
+        }
+
+        .contents {
+            width: 910px;
         }

@@ -10,28 +10,17 @@
         }
 
         .contents {
-<<<<<<< HEAD
             background-image: url("../img/rs_repeat_bg.jpg");
             background-repeat: repeat-y;
             background-attachment: fixed;
             background-position: center;
             background-color: black;
-=======
-            /* background-image: url("../img/rs_repeat_bg.jpg");
-            background-repeat: repeat-y;
-            background-attachment: fixed;
-            background-position: center;
-            background-color: black; */
->>>>>>> 941d79b092747674df531ebb9b0128cc86adf332
             text-align: center;
             display: block;
             margin-left: auto;
             margin-right: auto;
             color: white;
-<<<<<<< HEAD
             height: 100%;
-=======
->>>>>>> 941d79b092747674df531ebb9b0128cc86adf332
         }
 
         .container {
@@ -73,7 +62,7 @@
 
 
         .lb_nav ul {
-            background: url(https://www.runescape.com/img/rsp777/hiscores/banner_middle2.gif) repeat-y;
+            background: url("../img/banner_middle2.gif") repeat-y;
             max-width: 157px;
             margin: 200px;
 
@@ -93,10 +82,6 @@
         }
 
         .main {
-<<<<<<< HEAD
-=======
-            margin-top: 25px;
->>>>>>> 941d79b092747674df531ebb9b0128cc86adf332
             display: flex;
         }
 
@@ -109,7 +94,7 @@
         }
 
         .sidebarnavbg {
-            background: url(https://www.runescape.com/img/rsp777/hiscores/banner_middle2.gif) repeat-y;
+            background: url("../img/sidebar_middle.gif") repeat-y;
             width: 175px;
             list-style: none;
             margin-left: 50px;
@@ -124,4 +109,69 @@
 
         .contents {
             width: 910px;
+        }
+
+        .ladder_wrapper {
+            text-align: center;
+            margin-top: 30px;
+        }
+  
+        .ladder_table {
+            display: inline-block;
+        }
+  
+        .ladder_header {
+            background: url(https://www.runescape.com/img/rsp777/hiscores/scroll_top.gif) no-repeat;
+                width: 379px;
+            height: 36px;
+        }
+  
+        .ladder_content {
+            width: 379px;
+            position: relative;
+            background: url(https://www.runescape.com/img/rsp777/hiscores/scroll_middle.gif) repeat-y;
+            line-height: 18px;
+            color: #000;
+            text-align: center;
+        }
+  
+        .ladder_footer {
+            background: url(https://www.runescape.com/img/rsp777/hiscores/scroll_bottom.gif) no-repeat;
+            width: 379px;
+            height: 36px;
+        }
+  
+        .right {
+            padding-right: 15px;
+            width: 50%;
+        }
+  
+        .left {
+            padding-left: 15px;
+            width: 50%;
+        }
+  
+        .ladder_table caption {
+            font-weight: bold;
+        }
+  
+        .rank_1_medal {
+            width: 25%;
+            padding-right: 20px;
+        }
+  
+        .rank_2_medal {
+          width: 20%;
+          padding-right: 20px;
+      }
+  
+      .rank_3_medal {
+          width: 15%;
+          padding-right: 20px;
+      }
+  
+        .medal_wrapper {
+          display:flex;
+          flex-wrap: nowrap;
+          align-items: center;
         }

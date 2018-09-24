@@ -13,10 +13,9 @@ nav = Nav(app)
 # Nav(app) initialised the navigation on the app.
 
 nav.register_element('my_navbar', Navbar('thenav',
-                                         View('About Us', 'main'),
-                                         View('Leaderboards', 'show_leaderboard', group='global'),
-                                         View('Rules', 'show_leaderboard', group='global'),
-                                         View('FAQ', 'show_leaderboard', group='global')))
+                                         View('Homepage', 'main'),
+                                         View('Global Leaderboard', 'show_leaderboard', group='global'
+                                              )))
 
 
 web = True
@@ -30,10 +29,11 @@ def main():
 def show_leaderboard(group):
     table = Ladder(group, Database(group)).table
     players = []
+    names = Database().get_leaderboards()
     for name in table:
         players.append({'name': name,
                         'rank': table.index(name) + 1})
-    return render_template('ladder_template.html', players=players, group=group)
+    return render_template('ladder_template.html', players=players, group=group, names=names)
 
 
 def console_main():

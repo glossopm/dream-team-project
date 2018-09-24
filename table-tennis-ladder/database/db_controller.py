@@ -3,7 +3,7 @@ import os
 
 
 class Database:
-    def __init__(self, ladder_name):
+    def __init__(self, ladder_name = 'global'):
         abspath = os.path.abspath("database/table_tennis.db")
         print abspath
         self.conn = sqlite3.connect(abspath)

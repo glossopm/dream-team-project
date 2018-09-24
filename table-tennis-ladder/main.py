@@ -28,7 +28,7 @@ nav.register_element('my_navbar', Navbar('thenav',
 
 web = True
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def main():
     return render_template('home.html')
 
@@ -40,6 +40,13 @@ def show_leaderboard(group):
     names = Database().get_leaderboards()
     lboardform = AddLeaderboardForm()
     playerform = AddPlayerForm()
+    print lboardform.validate_on_submit()
+    #print lboardform.leaderboard.data
+    if lboardform.validate_on_submit():
+        print 'success'
+        Database().create_league_table(lboardform.leaderboard.data)
+        return redirect('main')
+        
     for name in table:
         players.append({'name': name,
                         'rank': table.index(name) + 1})

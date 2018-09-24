@@ -12,6 +12,19 @@
 
 <body>
     <div class="contents">
+            <div class="col-md-8">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                      {% if messages %}
+                        {% for category, message in messages %}
+                          <div class="alert alert-{{ category }}">
+                            {{ message }}
+                          </div>
+                        {% endfor %}
+                      {% endif %}
+                    {% endwith %}
+                    {% block content %}{% endblock %}
+                  </div>
+
         <img src="../static/img/custom_rs_logo.png" alt="Dream Team">
 
         <div class="nav_wrapper">
@@ -22,7 +35,7 @@
             <div class="left">
 
                 <div class="sidebarnavbg">
-                    <img src="../static/img/banner_top2.gif" alt="Leaderboards">
+                    <img src="https://www.runescape.com/img/rsp777/hiscores/banner_top2.gif" alt="Leaderboards">
                     {% for name in names %}
                     <li><a href="../leaderboard/{{name}}">{{name}}</a></li>
                     {% endfor %}
@@ -84,7 +97,7 @@
         <div class='Form Data'> 
             <div class="content-section">
                 <form method="POST" action="">
-                        <legend class="add-leaderboard">Add Leaderboard</legend>
+                    <legend class="add-leaderboard">Add Leaderboard</legend>
                         <div class="form-group">
                             {{ lboardform.leaderboard.label() }}
         
@@ -98,7 +111,11 @@
                             {% else %}
                                 {{ lboardform.leaderboard() }}
                             {% endif %}
+                            <div class="lboard-submit">
+                                    {{ lboardform.submit() }}
+                            </div>
                         </div>
+
             </div>
         </div>
     </div>

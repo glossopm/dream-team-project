@@ -4,28 +4,22 @@
             width: 50%;
         }
 
-        html,
-        body {
+        html, body{ 
             background-color: black;
             height: 100%;
         }
 
         .contents {
-            background-image: url("../img/rs_repeat_bg.jpg");
+            /* background-image: url("../img/rs_repeat_bg.jpg");
             background-repeat: repeat-y;
             background-attachment: fixed;
             background-position: center;
-            background-color: black;
+            background-color: black; */
             text-align: center;
             display: block;
             margin-left: auto;
             margin-right: auto;
             color: white;
-            height: 100%;
-        }
-        
-        .main {
-            margin-top: 30px;
         }
 
         .container {
@@ -35,7 +29,9 @@
         table,
         th,
         td {
+            border: 1px solid black;
             text-align: center;
+            border-spacing: 5px;
         }
 
         p {
@@ -65,7 +61,7 @@
 
 
         .lb_nav ul {
-            background: url("../img/banner_middle2.gif") repeat-y;
+            background: url(https://www.runescape.com/img/rsp777/hiscores/banner_middle2.gif) repeat-y;
             max-width: 157px;
             margin: 200px;
 
@@ -85,6 +81,7 @@
         }
 
         .main {
+            margin-top: 25px;
             display: flex;
         }
 
@@ -93,25 +90,16 @@
         }
 
         .right {
-            flex: 2;
-            margin-right: 20%;
-        }
-
-        .ladder_content .right {
-            text-align: right;
-        }
-
-        .ladder_content .left {
-            text-align: left;
+            flex:2;
         }
 
         .sidebarnavbg {
-            background: url("../img/sidebar_middle.gif") repeat-y;
+            background: url(https://www.runescape.com/img/rsp777/hiscores/banner_middle2.gif) repeat-y;
             width: 175px;
             list-style: none;
             margin-left: 50px;
             padding-bottom: 10px;
-
+            
         }
 
 
@@ -121,69 +109,4 @@
 
         .contents {
             width: 910px;
-        }
-
-        .ladder_wrapper {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .ladder_table {
-            display: inline-block;
-        }
-
-        .ladder_header {
-            background: url("../img/scroll_top.gif") no-repeat;
-            width: 379px;
-            height: 36px;
-        }
-
-        .ladder_content {
-            width: 379px;
-            position: relative;
-            background: url("../img/scroll_middle.gif") repeat-y;
-            line-height: 18px;
-            color: #000;
-            text-align: center;
-        }
-
-        .ladder_footer {
-            background: url("../img/scroll_bottom.gif") no-repeat;
-            width: 379px;
-            height: 36px;
-        }
-
-        .right {
-            padding-right: 15px;
-            width: 50%;
-        }
-
-        .left {
-            padding-left: 15px;
-            width: 50%;
-        }
-
-        .ladder_table caption {
-            font-weight: bold;
-        }
-
-        .rank_1_medal {
-            width: 25%;
-            padding-right: 20px;
-        }
-
-        .rank_2_medal {
-            width: 20%;
-            padding-right: 20px;
-        }
-
-        .rank_3_medal {
-            width: 15%;
-            padding-right: 20px;
-        }
-
-        .medal_wrapper {
-            display: flex;
-            flex-wrap: nowrap;
-            align-items: center;
         }

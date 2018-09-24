@@ -41,6 +41,7 @@ def show_leaderboard(group):
     lboardform = AddLeaderboardForm()
     playerform = AddPlayerForm()
     print lboardform.validate_on_submit()
+    print lboardform
     #print lboardform.leaderboard.data
     if lboardform.validate_on_submit():
         print 'success'

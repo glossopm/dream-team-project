@@ -9,7 +9,7 @@ from flask_nav.elements import Navbar, Subgroup, View, Link, Text, Separator
 
 
 from flask import Flask, render_template, url_for, flash, redirect
-from form import AddLeaderboardForm, AddPlayerForm
+from form import AddLeaderboardForm, AddPlayerForm, RecordMatchForm
 
 app = Flask(__name__, template_folder='static/html', static_url_path='/static')
 # app.config['SERVER_NAME'] = "127.0.0.1:8080"
@@ -40,6 +40,7 @@ def show_leaderboard(group):
     names = Database().get_leaderboards()
     lboardform = AddLeaderboardForm()
     playerform = AddPlayerForm()
+    recordmatch = RecordMatchForm()
     print lboardform.validate_on_submit()
     print lboardform
     #print lboardform.leaderboard.data

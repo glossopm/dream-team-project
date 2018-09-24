@@ -20,12 +20,13 @@
         <div class="main">
             <div class="left">
 
+                <div class="sidebarnav_top"></div>
                 <div class="sidebarnavbg">
-                    <img src="../static/img/banner_top2.gif" alt="Leaderboards">
                     {% for name in names %}
                     <li><a href="../leaderboard/{{name}}">{{name}}</a></li>
                     {% endfor %}
                 </div>
+                <div class="sidebarnav_bottom"></div>
             </div>
 
             <div class="right">
@@ -34,6 +35,11 @@
                     <div class="ladder_bg">
                         <div class="ladder_content">
                             <table>
+                                {% if not players %}
+                                <caption style="width: 100%">
+                                    Leaderboard for group '{{ group }}' is empty!
+                                </caption>
+                                {% else %}
                                 <caption>
                                     Leaderboard for group '{{ group }}'
                                 </caption>
@@ -73,6 +79,7 @@
                                     <td class="left">{{ player.name }}</td>
                                 </tr>
                                 {% endfor %}
+                            {% endif %}
                             </table>
                         </div>
                     </div>

@@ -15,8 +15,7 @@ nav = Nav(app)
 nav.register_element('my_navbar', Navbar('thenav',
                                          View('About Us', 'main'),
                                          View('Leaderboards', 'show_leaderboard', group='global'),
-                                         View('Rules', 'show_leaderboard', group='global'),
-                                         View('FAQ', 'show_leaderboard', group='global')))
+                                         View('Rules', 'rules')))
 
 
 web = True
@@ -35,6 +34,10 @@ def show_leaderboard(group):
         players.append({'name': name,
                         'rank': table.index(name) + 1})
     return render_template('ladder_template.html', players=players, group=group, names=names)
+
+@app.route('/rules')
+def rules():
+    return render_template('rules.html')
 
 
 def console_main():

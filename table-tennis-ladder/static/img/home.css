@@ -23,7 +23,7 @@
           background-color: black;
       }
 
-      body {
+      .contents {
           background-image: url("../img/rs_repeat_bg.jpg");
           background-repeat: repeat-y;
           background-attachment: fixed;
@@ -45,10 +45,10 @@
           color: white;
       }
 
-      table,
-      th,
-      td {
+      table {
+          width: 100%;height: 100%;
           text-align: center;
+          border-spacing: 5px;
       }
 
       p {

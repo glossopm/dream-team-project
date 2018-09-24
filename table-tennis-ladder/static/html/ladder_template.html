@@ -97,6 +97,7 @@
         <div class='Form Data'> 
             <div class="content-section">
                 <form method="POST" action="">
+                    {{ lboardform.csrf_token }}
                     <legend class="add-leaderboard">Add Leaderboard</legend>
                         <div class="form-group">
                             {{ lboardform.leaderboard.label() }}

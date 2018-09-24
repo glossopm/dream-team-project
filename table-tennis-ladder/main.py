@@ -46,7 +46,7 @@ def show_leaderboard(group):
     if lboardform.validate_on_submit():
         print 'success'
         Database().create_league_table(lboardform.leaderboard.data)
-        return redirect('main')
+        return redirect('/leaderboard/%s' % lboardform.leaderboard.data)
         
     for name in table:
         players.append({'name': name,

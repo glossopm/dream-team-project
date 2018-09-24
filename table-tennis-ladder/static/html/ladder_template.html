@@ -5,13 +5,18 @@
     <link rel="stylesheet" type="text/css" href="../static/css/ladder_template.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<<<<<<< HEAD
 
+=======
+    <link rel="stylesheet" href="../static/css/home.css">
+>>>>>>> 941d79b092747674df531ebb9b0128cc86adf332
 
     <title>League Tracker</title>
 </head>
 
 <body>
     <div class="contents">
+<<<<<<< HEAD
     <img src="../static/img/custom_rs_logo.png" alt="Dream Team">
 
     <div class="nav_wrapper">
@@ -49,11 +54,86 @@
                 {% endfor %}
             </table>
         </center>
+=======
+        <img src="../static/img/custom_rs_logo.png" alt="Dream Team">
+
+        <div class="nav_wrapper">
+            {{ nav.my_navbar.render() }}
+        </div>
+
+        <div class="main">
+            <div class="left">
+
+                <div class="sidebarnavbg">
+                    <img src="https://www.runescape.com/img/rsp777/hiscores/banner_top2.gif" alt="Leaderboards">
+                    {% for name in names %}
+                    <li><a href="../leaderboard/{{name}}">{{name}}</a></li>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="ladder_table">
+                    <div class="ladder_header"></div>
+                    <div class="ladder_bg">
+                        <div class="ladder_content">
+                            <table>
+                                <caption>
+                                    Leaderboard for group '{{ group }}'
+                                </caption>
+                                <thead>
+                                    <tr>
+                                        <th class="right">Rank</th>
+                                        <th class="left">Player</th>
+                                    </tr>
+                                </thead>
+
+                                {% for player in players %}
+                                <tr>
+                                    {% if player.rank == 1 %}
+                                    <td class="right">
+                                        <div class="medal_wrapper">
+                                            <span><img class="rank_1_medal" src="../static/img/rank_1_medal.png" alt="Winners medal" /></span>
+                                            <span>{{ player.rank }}</span>
+                                        </div>
+                                    </td>
+                                    {% elif player.rank == 2 %}
+                                    <td class="right">
+                                        <div class="medal_wrapper">
+                                            <span><img class="rank_2_medal" src="../static/img/rank_2_medal.png" alt="Winners medal" /></span>
+                                            <span>{{ player.rank }}</span>
+                                        </div>
+                                    </td>
+                                    {% elif player.rank == 3 %}
+                                    <td class="right">
+                                        <div class="medal_wrapper">
+                                            <span><img class="rank_3_medal" src="../static/img/rank_3_medal.png" alt="Winners medal" /></span>
+                                            <span>{{ player.rank }}</span>
+                                        </div>
+                                    </td>
+                                    {% else %}
+                                    <td class="right">{{ player.rank }}</td>
+                                    {% endif %}
+                                    <td class="left">{{ player.name }}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+                    <div class="ladder_footer"></div>
+                </div>
+            </div>
+        </div>
+>>>>>>> 941d79b092747674df531ebb9b0128cc86adf332
     </div>
     </div>
 </div>
 
+<<<<<<< HEAD
     </div>
     </body>
+=======
+</body>
+>>>>>>> 941d79b092747674df531ebb9b0128cc86adf332
 
 </html>

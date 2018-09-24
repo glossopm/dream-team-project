@@ -4,7 +4,8 @@
             width: 50%;
         }
 
-        html, body{ 
+        html,
+        body {
             background-color: black;
             height: 100%;
         }
@@ -22,6 +23,10 @@
             color: white;
             height: 100%;
         }
+        
+        .main {
+            margin-top: 30px;
+        }
 
         .container {
             color: white;
@@ -30,9 +35,7 @@
         table,
         th,
         td {
-            border: 1px solid black;
             text-align: center;
-            border-spacing: 5px;
         }
 
         p {
@@ -90,7 +93,16 @@
         }
 
         .right {
-            flex:2;
+            flex: 2;
+            margin-right: 20%;
+        }
+
+        .ladder_content .right {
+            text-align: right;
+        }
+
+        .ladder_content .left {
+            text-align: left;
         }
 
         .sidebarnavbg {
@@ -99,7 +111,7 @@
             list-style: none;
             margin-left: 50px;
             padding-bottom: 10px;
-            
+
         }
 
 
@@ -115,63 +127,63 @@
             text-align: center;
             margin-top: 30px;
         }
-  
+
         .ladder_table {
             display: inline-block;
         }
-  
+
         .ladder_header {
-            background: url(https://www.runescape.com/img/rsp777/hiscores/scroll_top.gif) no-repeat;
-                width: 379px;
+            background: url("../img/scroll_top.gif") no-repeat;
+            width: 379px;
             height: 36px;
         }
-  
+
         .ladder_content {
             width: 379px;
             position: relative;
-            background: url(https://www.runescape.com/img/rsp777/hiscores/scroll_middle.gif) repeat-y;
+            background: url("../img/scroll_middle.gif") repeat-y;
             line-height: 18px;
             color: #000;
             text-align: center;
         }
-  
+
         .ladder_footer {
-            background: url(https://www.runescape.com/img/rsp777/hiscores/scroll_bottom.gif) no-repeat;
+            background: url("../img/scroll_bottom.gif") no-repeat;
             width: 379px;
             height: 36px;
         }
-  
+
         .right {
             padding-right: 15px;
             width: 50%;
         }
-  
+
         .left {
             padding-left: 15px;
             width: 50%;
         }
-  
+
         .ladder_table caption {
             font-weight: bold;
         }
-  
+
         .rank_1_medal {
             width: 25%;
             padding-right: 20px;
         }
-  
+
         .rank_2_medal {
-          width: 20%;
-          padding-right: 20px;
-      }
-  
-      .rank_3_medal {
-          width: 15%;
-          padding-right: 20px;
-      }
-  
+            width: 20%;
+            padding-right: 20px;
+        }
+
+        .rank_3_medal {
+            width: 15%;
+            padding-right: 20px;
+        }
+
         .medal_wrapper {
-          display:flex;
-          flex-wrap: nowrap;
-          align-items: center;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
         }

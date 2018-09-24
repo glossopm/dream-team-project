@@ -13,9 +13,10 @@ nav = Nav(app)
 # Nav(app) initialised the navigation on the app.
 
 nav.register_element('my_navbar', Navbar('thenav',
-                                         View('Homepage', 'main'),
-                                         View('Global Leaderboard', 'show_leaderboard', group='global'
-                                              )))
+                                         View('About Us', 'main'),
+                                         View('Leaderboards', 'show_leaderboard', group='global'),
+                                         View('Rules', 'show_leaderboard', group='global'),
+                                         View('FAQ', 'show_leaderboard', group='global')))
 
 
 web = True

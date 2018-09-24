@@ -7,8 +7,15 @@ from flask import Flask, render_template
 from flask_nav import Nav
 from flask_nav.elements import Navbar, Subgroup, View, Link, Text, Separator
 
+
+from flask import Flask, render_template, url_for, flash, redirect
+from form import AddLeaderboardForm, AddPlayerForm
+
 app = Flask(__name__, template_folder='static/html', static_url_path='/static')
 # app.config['SERVER_NAME'] = "127.0.0.1:8080"
+app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
+# secret key to protect
+
 nav = Nav(app)
 # Nav(app) initialised the navigation on the app.
 
@@ -26,15 +33,18 @@ def main():
     return render_template('home.html')
 
 
-@app.route('/leaderboard/<group>')
+@app.route('/leaderboard/<group>', methods=['GET', 'POST'])
 def show_leaderboard(group):
     table = Ladder(group, Database(group)).table
     players = []
     names = Database().get_leaderboards()
+    lboardform = AddLeaderboardForm()
+    playerform = AddPlayerForm()
     for name in table:
         players.append({'name': name,
                         'rank': table.index(name) + 1})
-    return render_template('ladder_template.html', players=players, group=group, names=names)
+    return render_template('ladder_template.html', players=players, group=group, names=names, 
+        lboardform=lboardform, playerform=playerform)
 
 
 def console_main():

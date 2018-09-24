@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="../static/css/ladder_template.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../static/css/home.css">
 
     <title>League Tracker</title>
 </head>
@@ -80,7 +81,29 @@
                 </div>
             </div>
         </div>
+        <div class='Form Data'> 
+            <div class="content-section">
+                <form method="POST" action="">
+                        <legend class="add-leaderboard">Add Leaderboard</legend>
+                        <div class="form-group">
+                            {{ lboardform.leaderboard.label() }}
+        
+                            {% if lboardform.leaderboard.errors %}
+                                {{ lboardform.leaderboard() }}
+                                <div class="invalid-feedback">
+                                    {% for error in lboardform.leaderboard.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ lboardform.leaderboard() }}
+                            {% endif %}
+                        </div>
+            </div>
+        </div>
     </div>
+
+</div>
 
 </body>
 

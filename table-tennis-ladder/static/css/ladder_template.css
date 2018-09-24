@@ -89,7 +89,7 @@ p {
 }
 
 .left {
-    flex: 1
+    flex: 1;
 }
 
 .right {
@@ -111,7 +111,10 @@ p {
     list-style: none;
     margin-left: 50px;
     padding-bottom: 10px;
+}
 
+.sidebarnavbg li {
+    margin-left: 9px;
 }
 
 

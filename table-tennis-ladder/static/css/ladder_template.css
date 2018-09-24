@@ -10,17 +10,16 @@
         }
 
         .contents {
-            background-image: url("../img/rs_repeat_bg.jpg");
+            /* background-image: url("../img/rs_repeat_bg.jpg");
             background-repeat: repeat-y;
             background-attachment: fixed;
             background-position: center;
-            background-color: black;
+            background-color: black; */
             text-align: center;
             display: block;
             margin-left: auto;
             margin-right: auto;
             color: white;
-            height: 100%;
         }
 
         .container {
@@ -82,6 +81,7 @@
         }
 
         .main {
+            margin-top: 25px;
             display: flex;
         }
 

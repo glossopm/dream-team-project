@@ -120,15 +120,17 @@
                                 {{ lboardform.leaderboard() }}
                             {% endif %}
                             <div class="lboard-submit">
-                                    {{ lboardform.submit() }}
+                                    {{ lboardform.submit1() }}
                             </div>
                         </div>
+                </form>
             </div>
         </div>
+        <br>
         <div class='Form Data'> 
                 <div class="content-section">
                     <form method="POST" action="">
-                        {{ lboardform.csrf_token }}
+                        {{ recordmatch.csrf_token }}
                         <legend class="record-match">Record Match</legend>
                             <div class="winner">
                                 {{ recordmatch.winner.label() }}
@@ -160,7 +162,7 @@
                                     
                                 </div>
                             <div class="match-submit">
-                                {{ lboardform.submit() }}
+                                {{ recordmatch.submit2() }}
                               </div>
                             </form>
                 </div>

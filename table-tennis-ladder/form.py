@@ -6,15 +6,15 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo
 class AddLeaderboardForm(FlaskForm):
     leaderboard = StringField('Leaderboard',
                            validators=[DataRequired(), Length(min=2, max=20)])
-    submit = SubmitField('Add Leaderboard')
-
-
-class AddPlayerForm(FlaskForm):
-    player = StringField('Player',
-                           validators=[DataRequired(), Length(min=2, max=20)])
-    submit = SubmitField('Add Player')
+    submit1 = SubmitField('Add Leaderboard')
 
 class RecordMatchForm(FlaskForm):
     winner = StringField('Winner', validators=[DataRequired(), Length(min=2, max=20)])
     loser = StringField('Loser', validators=[DataRequired(), Length(min=2, max=20)])
-    submit = SubmitField('Record Match')
+    submit2 = SubmitField('Record Match')
+    
+class AddPlayerForm(FlaskForm):
+    player = StringField('Player',
+                           validators=[DataRequired(), Length(min=2, max=20)])
+    submit3 = SubmitField('Add Player')
+

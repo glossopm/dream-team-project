@@ -36,22 +36,25 @@ def main():
 @app.route('/leaderboard/<group>', methods=['GET', 'POST'])
 def show_leaderboard(group):
     table = Ladder(group, Database(group)).table
+    ladder = Ladder(group, Database(group))
     players = []
     names = Database().get_leaderboards()
-    lboardform = AddLeaderboardForm()
-    playerform = AddPlayerForm()
-    recordmatch = RecordMatchForm()
-    print recordmatch.winner.data
-    print recordmatch.loser.data
+    lboardform = AddLeaderboardForm(prefix="lboardform")
+    playerform = AddPlayerForm(prefix='playerform')
+    recordmatch = RecordMatchForm(prefix='recordmatch')
+    #print recordmatch.winner.data
+    #print recordmatch.loser.data
     #print lboardform.leaderboard.data
-    if lboardform.validate_on_submit():
+    print recordmatch.submit2.data
+    if lboardform.submit1.data and lboardform.validate():
         print 'success'
         Database().create_league_table(lboardform.leaderboard.data)
         return redirect('/leaderboard/%s' % lboardform.leaderboard.data)
-    
-    if recordmatch.validate_on_submit():
+        
+    if recordmatch.submit2.data and recordmatch.validate():
         print 'match recorded'+ recordmatch.winner.data + recordmatch.loser.data
-        table.add_new_score(recordmatch.winner.data,recordmatch.loser.data)
+        ladder.add_new_score(recordmatch.winner.data,recordmatch.loser.data)
+        return redirect('/leaderboard/%s' % group)
 
     for name in table:
         players.append({'name': name,

@@ -1,7 +1,7 @@
 import sys
 from user_interface.user_interface import Interface
 from database.db_controller import Database
-from ladder.ladder import Ladder
+from ladder.ladder import Ladder 
 
 from flask import Flask, render_template
 from flask_nav import Nav
@@ -22,7 +22,8 @@ nav = Nav(app)
 nav.register_element('my_navbar', Navbar('thenav',
                                          View('About Us', 'main'),
                                          View('Leaderboards', 'show_leaderboard', group='global'),
-                                         View('Rules', 'rules')))
+                                         View('Rules', 'show_leaderboard', group='global'),
+                                         View('FAQ', 'show_leaderboard', group='global')))
 
 
 web = True
@@ -40,23 +41,23 @@ def show_leaderboard(group):
     lboardform = AddLeaderboardForm()
     playerform = AddPlayerForm()
     recordmatch = RecordMatchForm()
-    print lboardform.validate_on_submit()
-    print lboardform
+    print recordmatch.winner.data
+    print recordmatch.loser.data
     #print lboardform.leaderboard.data
     if lboardform.validate_on_submit():
         print 'success'
         Database().create_league_table(lboardform.leaderboard.data)
         return redirect('/leaderboard/%s' % lboardform.leaderboard.data)
-        
+    
+    if recordmatch.validate_on_submit():
+        print 'match recorded'+ recordmatch.winner.data + recordmatch.loser.data
+        table.add_new_score(recordmatch.winner.data,recordmatch.loser.data)
+
     for name in table:
         players.append({'name': name,
                         'rank': table.index(name) + 1})
     return render_template('ladder_template.html', players=players, group=group, names=names, 
-        lboardform=lboardform, playerform=playerform)
-
-@app.route('/rules')
-def rules():
-    return render_template('rules.html')
+        lboardform=lboardform, playerform=playerform, recordmatch=recordmatch)
 
 
 def console_main():

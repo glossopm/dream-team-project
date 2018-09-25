@@ -125,6 +125,46 @@
                         </div>
             </div>
         </div>
+        <div class='Form Data'> 
+                <div class="content-section">
+                    <form method="POST" action="">
+                        {{ lboardform.csrf_token }}
+                        <legend class="record-match">Record Match</legend>
+                            <div class="winner">
+                                {{ recordmatch.winner.label() }}
+            
+                                {% if recordmatch.winner.errors %}
+                                    {{ recordmatch.winner() }}
+                                    <div class="invalid-feedback">
+                                        {% for error in recordmatch.winner.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ recordmatch.winner() }}
+                                {% endif %}
+                            </div>
+                            <div class="loser">
+                                    {{ recordmatch.loser.label() }}
+                
+                                    {% if recordmatch.loser.errors %}
+                                        {{ recordmatch.loser() }}
+                                        <div class="invalid-feedback">
+                                            {% for error in recordmatch.loser.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ recordmatch.loser() }}
+                                    {% endif %}
+                                    
+                                </div>
+                            <div class="match-submit">
+                                {{ lboardform.submit() }}
+                              </div>
+                            </form>
+                </div>
+            </div>
     </div>
 
 </div>

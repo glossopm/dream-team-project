@@ -16,5 +16,5 @@ class AddPlayerForm(FlaskForm):
 
 class RecordMatchForm(FlaskForm):
     winner = StringField('Winner', validators=[DataRequired(), Length(min=2, max=20)])
-    loser = StringFirled('Loser', validators=[DataRequired(), Length(min=2, max=20)])
+    loser = StringField('Loser', validators=[DataRequired(), Length(min=2, max=20)])
     submit = SubmitField('Record Match')

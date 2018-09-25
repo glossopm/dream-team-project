@@ -1,0 +1,40 @@
+---
+- hosts: dreamteam
+  become: yes
+  tasks:
+  - name: ensure python2 is installed
+    apt:
+      name: python
+      state: latest
+  - name: ensure nginx is at the latest version
+    apt:
+      name: nginx
+      state: latest
+  - name: ensure git is at the latest version
+    apt:
+      name: git
+      state: latest
+  - name: copy dreamteam.conf to server
+    copy:
+      src: dreamteam.conf
+      dest: /etc/nginx/conf.d/dreamteam.conf
+  - name: Create symbolic link to sites available from conf
+    file:
+      src: /etc/nginx/conf.d/dreamteam.conf
+      dest: /etc/nginx/sites-available/dreamteam.conf
+      state: link
+  - name: Create symbolic link to sites enabled from conf
+    file:
+      src: /etc/nginx/sites-available/dreamteam.conf
+      dest: /etc/nginx/sites-enabled/dreamteam.conf
+      state: link
+  - name: clone the git repository to the server
+    become: no
+    git:
+      repo: git@github.com:glossopm/dream-team-project.git
+      clone: yes
+      dest: ~/www/
+  - name: start the nginx service
+    service:
+      name: nginx
+      state: restarted

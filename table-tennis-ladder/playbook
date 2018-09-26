@@ -61,9 +61,10 @@
       name: flask_nav
       state: latest
   - name: start daemon with flask app
+    become_user: sorsby
     shell: nohup python /home/sorsby/www/table-tennis-ladder/main.py &
     args:
-      chdir: /tmp/
+      chdir: /home/sorsby/www/table-tennis-ladder/
   - name: re-start the nginx service
     service:
       name: nginx

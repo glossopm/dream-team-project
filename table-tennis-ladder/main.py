@@ -22,7 +22,7 @@ nav = Nav(app)
 nav.register_element('my_navbar', Navbar('thenav',
                                          View('About Us', 'main'),
                                          View('Leaderboards', 'show_leaderboard', group='global'),
-                                         View('Rules', 'show_leaderboard', group='global'),
+                                         View('Rules', 'rules'),
                                          View('FAQ', 'show_leaderboard', group='global')))
 
 
@@ -42,10 +42,7 @@ def show_leaderboard(group):
     lboardform = AddLeaderboardForm(prefix="lboardform")
     playerform = AddPlayerForm(prefix='playerform')
     recordmatch = RecordMatchForm(prefix='recordmatch')
-    #print recordmatch.winner.data
-    #print recordmatch.loser.data
-    #print lboardform.leaderboard.data
-    print recordmatch.submit2.data
+
     if lboardform.submit1.data and lboardform.validate():
         print 'success'
         Database().create_league_table(lboardform.leaderboard.data)

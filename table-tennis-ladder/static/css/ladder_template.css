@@ -204,3 +204,11 @@ p {
     height: 60px;
     margin-left: 50px;
 }
+
+.captcha {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    width: 304px;
+}

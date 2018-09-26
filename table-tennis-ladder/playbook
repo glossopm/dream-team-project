@@ -1,10 +1,15 @@
 ---
 - hosts: dreamteam
   become: yes
+  become_user: sorsby
+  gather_facts: no
+  # pre_tasks:
+  #   - name: 'install python2'
+  #     raw: sudo apt-get -y install python
   tasks:
-  - name: ensure python2 is installed
+  - name: ensure pip is installed
     apt:
-      name: python
+      name: python-pip
       state: latest
   - name: ensure nginx is at the latest version
     apt:
@@ -37,4 +42,20 @@
   - name: start the nginx service
     service:
       name: nginx
-      state: restarted
+      state: started
+  - name:
+    pip:
+      name: PrettyTable
+      state: latest
+  - name:
+    pip:
+      name: flask
+      state: latest
+  - name:
+    pip:
+      name: flask_wtf
+      state: latest
+  - name: execute flask appilcation
+    command: python main.py
+    args:
+      chdir: ~/www/table-tennis-ladder/

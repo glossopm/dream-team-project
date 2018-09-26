@@ -75,3 +75,10 @@
           color: #90c040;
           text-decoration: none;
       }
+      .Form-Data {
+          background: url("../img/search_box.gif");
+          width: 152px;
+          text-align: center;
+          color: #d9c27e;
+          margin-bottom: 25px;
+      }

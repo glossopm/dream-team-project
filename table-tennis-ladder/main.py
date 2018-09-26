@@ -22,7 +22,7 @@ nav = Nav(app)
 nav.register_element('my_navbar', Navbar('thenav',
                                          View('About Us', 'main'),
                                          View('Leaderboards', 'show_leaderboard', group='global'),
-                                         View('Rules', 'rules'),
+                                         View('Rules', 'show_rules'),
                                          View('FAQ', 'show_leaderboard', group='global')))
 
 
@@ -31,6 +31,10 @@ web = True
 @app.route("/", methods=['GET', 'POST'])
 def main():
     return render_template('home.html')
+
+@app.route("/rules", methods=['GET'])
+def show_rules():
+    return render_template('rules.html')
 
 
 @app.route('/leaderboard/<group>', methods=['GET', 'POST'])

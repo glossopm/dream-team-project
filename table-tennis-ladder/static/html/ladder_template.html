@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../static/css/home.css">
-
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <title>League Tracker</title>
 </head>
 
@@ -101,13 +101,13 @@
                 </div>
             </div>
         </div>
-        <div class='Form Data'> 
+        <div class='form-data'> 
             <div class="content-section">
                 <form method="POST" action="">
                     {{ lboardform.csrf_token }}
+                    <div class='form-content'>
                     <legend class="add-leaderboard">Add Leaderboard</legend>
                         <div class="form-group">
-                            {{ lboardform.leaderboard.label() }}
         
                             {% if lboardform.leaderboard.errors %}
                                 {{ lboardform.leaderboard() }}
@@ -123,14 +123,19 @@
                                     {{ lboardform.submit1() }}
                             </div>
                         </div>
+                            <div class="captcha">
+                                {{ lboardform.recaptcha1 }}
+                            </div>
+                        </div>
                 </form>
             </div>
         </div>
         <br>
-        <div class='Form Data'> 
+        <div class='form-data'> 
                 <div class="content-section">
                     <form method="POST" action="">
                         {{ recordmatch.csrf_token }}
+                        
                         <legend class="record-match">Record Match</legend>
                             <div class="winner">
                                 {{ recordmatch.winner.label() }}
@@ -164,6 +169,9 @@
                             <div class="match-submit">
                                 {{ recordmatch.submit2() }}
                               </div>
+                                <div class="captcha">
+                                    {{ recordmatch.recaptcha2 }}
+                                </div>
                             </form>
                             <br>
                             <br>

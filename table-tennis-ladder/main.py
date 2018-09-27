@@ -15,6 +15,13 @@ app = Flask(__name__, template_folder='static/html', static_url_path='/static')
 # app.config['SERVER_NAME'] = "127.0.0.1:8080"
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 # secret key to protect
+app.config['RECAPTCHA_USE_SSL'] = False
+app.config['RECAPTCHA_PUBLIC_KEY'] = '6LfESXIUAAAAANFsJ9CpHSqaKP-uCERaDAmdVFP_'
+app.config['RECAPTCHA_PRIVATE_KEY'] = '6LfESXIUAAAAAJIW-Euh-cyOk9xqBdgVeQkQBOem'
+app.config['RECAPTCHA_PARAMETERS'] = {'hl': 'zh', 'render': 'explicit'}
+app.config['RECAPTCHA_DATA_ATTRS'] = {'theme': 'dark'}
+# ReCaptcha private and public key for security
+
 
 nav = Nav(app)
 # Nav(app) initialised the navigation on the app.
@@ -42,10 +49,7 @@ def show_leaderboard(group):
     lboardform = AddLeaderboardForm(prefix="lboardform")
     playerform = AddPlayerForm(prefix='playerform')
     recordmatch = RecordMatchForm(prefix='recordmatch')
-    #print recordmatch.winner.data
-    #print recordmatch.loser.data
-    #print lboardform.leaderboard.data
-    print recordmatch.submit2.data
+
     if lboardform.submit1.data and lboardform.validate():
         print 'success'
         Database().create_league_table(lboardform.leaderboard.data)

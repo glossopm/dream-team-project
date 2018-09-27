@@ -101,14 +101,13 @@
                 </div>
             </div>
         </div>
-        <div class='Form Data'> 
+        <div class='form-data'> 
             <div class="content-section">
                 <form method="POST" action="">
                     {{ lboardform.csrf_token }}
-                    
+                    <div class='form-content'>
                     <legend class="add-leaderboard">Add Leaderboard</legend>
                         <div class="form-group">
-                            {{ lboardform.leaderboard.label() }}
         
                             {% if lboardform.leaderboard.errors %}
                                 {{ lboardform.leaderboard() }}
@@ -123,6 +122,7 @@
                             <div class="lboard-submit">
                                     {{ lboardform.submit1() }}
                             </div>
+                        </div>
                             <div class="captcha">
                                 {{ lboardform.recaptcha1 }}
                             </div>
@@ -131,7 +131,7 @@
             </div>
         </div>
         <br>
-        <div class='Form Data'> 
+        <div class='form-data'> 
                 <div class="content-section">
                     <form method="POST" action="">
                         {{ recordmatch.csrf_token }}

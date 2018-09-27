@@ -8,6 +8,17 @@ html,
 body {
     background-color: black;
     height: 100%;
+    background-image: url("../img/rs_repeat_bg.jpg");
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: black;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    height: 100%;
 }
 
 .contents {
@@ -207,8 +218,22 @@ p {
 
 .captcha {
     text-align: center;
-    position: relative;
     display: inline-block;
     margin: 0 auto;
     width: 304px;
+}
+
+.form-data {
+    width: 304px;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    color: #d9c27e;
+    margin-bottom: 25px;
+    background-image: url("../img/form_bg.jpg");
+    background-position: center;
+    background-color: #383023;
+    border-radius: 25px;
+    border: 2px solid #68696A;
+    padding: 5px; 
 }

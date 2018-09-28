@@ -40,6 +40,8 @@
       repo: git@github.com:glossopm/dream-team-project.git
       clone: yes
       dest: ~/www/
+      force: yes
+      version: master
   - name: start the nginx service
     service:
       name: nginx
@@ -62,9 +64,9 @@
       state: latest
   - name: start daemon with flask app
     become_user: sorsby
-    shell: nohup python /home/sorsby/www/table-tennis-ladder/main.py &
+    shell: nohup python ~/www/table-tennis-ladder/main.py &
     args:
-      chdir: /home/sorsby/www/table-tennis-ladder/
+      chdir: ~/www/table-tennis-ladder/
   - name: re-start the nginx service
     service:
       name: nginx
